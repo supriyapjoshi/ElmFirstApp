@@ -112,7 +112,6 @@ update msg model =
             ( model, Cmd.none )
 
 
-
 --- VIEW
 
 
@@ -131,7 +130,9 @@ displayVideosList videos =
 
 toHtmlLi: VideosResult -> Html Msg
 toHtmlLi videosResult =
-    li [class "list-group-item"] [text videosResult.title]
+    li [css [cursor pointer
+            , hover [backgroundColor (hex "eee")]]
+       ] [text videosResult.title]
 
 view : Model -> Html Msg
 view model =
